@@ -34,7 +34,7 @@ public class Sql2oDepartmentDao implements DepartmentDao {
     try(Connection con = sql2o.open()){
       con.createQuery(sql)
         .addParameter("departmentId",department.getId())
-        .addParameter("foodtypeId",user.getId())
+        .addParameter("userId",user.getId())
         .executeUpdate();
     }catch (Sql2oException ex){
       System.out.println(ex);

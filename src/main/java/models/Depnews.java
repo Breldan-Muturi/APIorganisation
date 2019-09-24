@@ -21,6 +21,7 @@ public class Depnews {
     this.createdat = System.currentTimeMillis();
     setFormattedCreatedAt();
   }
+
   @Override
   public int compareTo(Depnews depnewsObject){
     if(this.createdat < depnewsObject.createdat){

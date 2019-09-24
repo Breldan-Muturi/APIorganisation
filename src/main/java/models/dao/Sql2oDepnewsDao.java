@@ -49,19 +49,19 @@ public class Sql2oDepnewsDao implements DepnewsDao{
     List<Depnews> unsortedDepnews = getAllDepnewsByDepartment(departmentId);
     List<Depnews> sortedDepnews = new ArrayList<>();
     int i = 1;
-    for(Depnews review : unsortedDepnews){
+    for(Depnews depnews : unsortedDepnews){
       int comparisonResult;
       if( i == unsortedDepnews.size()){
-        if(review.compareTo(unsortedDepnews.get(i-1))== -1){
+        if(depnews.compareTo(unsortedDepnews.get(i-1))== -1){
           sortedDepnews.add(0, unsortedDepnews.get(i-1));
         }
         break;
       }
       else {
-        if(review.compareTo(unsortedDepnews.get(i)) == -1){
+        if(depnews.compareTo(unsortedDepnews.get(i)) == -1){
           sortedDepnews.add(0, unsortedDepnews.get(i));
           i++;
-        } else if(review.compareTo(unsortedDepnews.get(i))==0){
+        } else if(depnews.compareTo(unsortedDepnews.get(i))==0){
           sortedDepnews.add(0,unsortedDepnews.get(i));
           i++;
         } else {
