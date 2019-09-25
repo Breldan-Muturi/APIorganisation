@@ -4,7 +4,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Objects;
 
-public class Depnews {
+public class Depnews implements Comparable<Depnews>{
   private int id;
   private String content;
   private String writtenBy;
@@ -79,7 +79,7 @@ public class Depnews {
     return createdat;
   }
 
-  public void setCreatedat(long createdat) {
+  public void setCreatedat() {
     this.createdat = System.currentTimeMillis();
   }
 
@@ -90,7 +90,7 @@ public class Depnews {
     return sdf.format(date);
   }
 
-  public void setFormattedCreatedAt(String formattedCreatedAt) {
+  public void setFormattedCreatedAt() {
     Date date = new Date (this.createdat);
     String datePatterToUse = "MM/dd/yyyy @ k:mm a";
     SimpleDateFormat sdf = new SimpleDateFormat(datePatterToUse);
