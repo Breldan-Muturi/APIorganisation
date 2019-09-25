@@ -19,7 +19,7 @@ CREATE TABLE IF NOT EXISTS depnews (
  content VARCHAR,
  writtenby VARCHAR,
  rating VARCHAR,
- restaurantid INTEGER,
+ departmentid INTEGER,
  createdat BIGINT
 );
 
