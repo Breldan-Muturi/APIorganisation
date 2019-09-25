@@ -24,13 +24,12 @@ public class App {
     Gson gson = new Gson();
 
     staticFileLocation("/public");
-    String connectionString ="jdbc:h2:~/jadle.db;INIT=RUNSCRIPT from 'classpath:db/create.sql'";
+    String connectionString ="jdbc:h2:~/APIorganisation.db;INIT=RUNSCRIPT from 'classpath:db/create.sql'";
     Sql2o sql2o = new Sql2o(connectionString,"","");
 
     departmentDao = new Sql2oDepartmentDao(sql2o);
     userDao = new Sql2oUserDao(sql2o);
     depnewsDao = new Sql2oDepnewsDao(sql2o);
-    conn = sql2o.open();
 
     //CREATE
     post("/departments/:departmentId/user/:userId", "application/json",(req,res)-> {
