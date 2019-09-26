@@ -118,6 +118,7 @@ public class App {
     post("/departments/new", "application/json", (req, res) -> {
       Department department = gson.fromJson(req.body(),Department.class);
       departmentDao.add(department);
+      res.type("application/json");
       res.status(201);
       return gson.toJson(department);
     });
